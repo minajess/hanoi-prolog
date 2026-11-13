@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tower of Hanoi - Powered by Prolog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tower of Hanoi</h1>
+    <p>Puzzle logic and solver powered by <strong>SWI-Prolog</strong></p>
+  </header>
+
+  <main>
+    <section class="panel controls">
+      <label>Disks
+        <select id="disks"></select>
+      </label>
+      <label>Speed
+        <input type="range" id="speed" min="100" max="1000" value="500" dir="rtl">
+      </label>
+      <button id="reset">Reset</button>
+      <button id="solve" class="primary">Auto Solve</button>
+      <button id="pause" disabled>Pause</button>
+      <button id="restart" disabled>Restart Solution</button>
+    </section>
+
+    <section class="panel stats">
+      <div>Moves<b id="moves">0</b></div>
+      <div>Minimum<b id="min">0</b></div>
+      <div>Time<b id="time">0:00</b></div>
+    </section>
+
+    <p id="msg" class="msg">Click a tower to pick up its top disk, then click where to drop it.</p>
+
+    <section class="board" id="board">
+      <div class="tower" data-i="0"><div class="rod"></div><div class="disks"></div><div class="base"></div><span>Source</span></div>
+      <div class="tower" data-i="1"><div class="rod"></div><div class="disks"></div><div class="base"></div><span>Auxiliary</span></div>
+      <div class="tower" data-i="2"><div class="rod"></div><div class="disks"></div><div class="base"></div><span>Destination</span></div>
+    </section>
+
+    <section class="panel rules">
+      <h2>Rules</h2>
+      <ol>
+        <li>Move only one disk at a time.</li>
+        <li>Only the top disk of a tower can be moved.</li>
+        <li>A larger disk may never sit on a smaller disk.</li>
+        <li>Goal: move the whole stack to the Destination tower.</li>
+      </ol>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
